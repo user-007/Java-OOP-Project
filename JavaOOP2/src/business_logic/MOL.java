@@ -54,10 +54,10 @@ public class MOL {
     {
         return  this.ID;
     }
-    public  void RegisterProduct(System Sys)
+    public  void RegisterProduct(int InitialID,String InitialNname, String InitialDescription,String InitialCode, Boolean InitialType, Date InitialExpiryDate, String InitialState)
     {
-        Product NewProduct = new Product();
-        Sys.AddProduct(NewProduct);
+        Product NewProduct = new Product(InitialID,InitialNname,InitialDescription,InitialCode,InitialType,InitialExpiryDate,InitialState);
+        System.Products.add(NewProduct);
         //Write NewProduct in database when functionality is available
     }
 

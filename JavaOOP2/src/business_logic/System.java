@@ -13,4 +13,7 @@ public class System {
     {
         Products.add(Pr);
     }
+    public void AddClient(Client Cl){Clients.add(Cl);}
+    public void AddMOL(MOL Ml){MOLs.add(Ml);}
+    public void AddAdmin(Admin Ad){Admins.add(Ad);}
 }
