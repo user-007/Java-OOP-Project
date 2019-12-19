@@ -10,6 +10,7 @@ public class Product {
     private  Boolean Type;
     private  Date ExpiryDate;
     private  String State;
+    private int ClientID;
 
     public Product()
     {}
@@ -24,6 +25,7 @@ public class Product {
         ExpiryDate = InitialExpiryDate;
         State = InitialState;
     }
+    public int GetID(){return this.ID;}
     public String GetName()
     {
         return this.Name;
@@ -63,6 +65,11 @@ public class Product {
     {
         return  this.State;
     }
-
+    public  int GetClientID(){return this.ClientID;}
+    public void SetClientID(int NewID)
+    {
+        ClientID = NewID;
+        //update in database
+    }
 
 }

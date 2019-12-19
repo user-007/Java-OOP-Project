@@ -1,7 +1,6 @@
 package business_logic;
 
-import java.util.Date;
-import java.util.Properties;
+import java.util.*;
 
 public class MOL {
     private int ID;
@@ -9,8 +8,6 @@ public class MOL {
     private String UserName;
     private String Password;
     private Date DateCreated;
-    public  MOL()
-    {}
     public MOL(int I, String N, String UN, String P, Date DC)
     {
         ID = I;
@@ -61,4 +58,34 @@ public class MOL {
         //Write NewProduct in database when functionality is available
     }
 
+    public  void RegisterClient(int id,String name, String email, String phonenumber,Date date)
+    {
+        Client NewClient = new Client(id,name,email,phonenumber,date);
+        System.Clients.add(NewClient);
+        // Write in database
+    }
+
+    public  void RegisterProductToClient(int ClientID,int ProductID)
+    {
+        for(Product product : System.Products)
+        {
+            if(product.GetID() == ProductID)
+            {
+                product.SetClientID(ClientID);
+            }
+        }
+    }
+
+    public List<Product> GetClientProducts(int ClientID)
+    {
+        List<Product> ClientProducts = Arrays.asList();
+        for (Product product : System.Products)
+        {
+            if(product.GetClientID() == ClientID)
+            {
+                ClientProducts.add(product);
+            }
+        }
+        return ClientProducts;
+    }
 }

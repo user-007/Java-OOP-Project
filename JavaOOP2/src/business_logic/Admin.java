@@ -16,11 +16,5 @@ public void CreateMOl(int I, String N, String UN, String P, Date DC)
     //Insert into table
 }
 
-public  void  CreateAdmin(int I, String N, String UN, String P, Date DC)
-{
-    Admin ToCreate = new Admin(I,N,UN,P,DC);
-    System.Admins.add(ToCreate);
-    //insert into table
-}
 
 }
