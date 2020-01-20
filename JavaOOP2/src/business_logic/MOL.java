@@ -8,6 +8,8 @@ public class MOL {
     private String UserName;
     private String Password;
     private Date DateCreated;
+    public MOL()
+    {}
     public MOL(int I, String N, String UN, String P, Date DC)
     {
         ID = I;
@@ -65,15 +67,37 @@ public class MOL {
         // Write in database
     }
 
-    public  void RegisterProductToClient(int ClientID,int ProductID)
+    public  int RegisterProductToClient(int ClientID,int ProductID)
     {
+        boolean ClientFound = false;
+        for (Client client : System.Clients)
+        {
+            if(client.GetID() == ClientID)
+            {
+                ClientFound = true;
+                break;
+            }
+        }
+        if(!ClientFound)
+        {
+            return 0;//"Client not found";
+        }
         for(Product product : System.Products)
         {
             if(product.GetID() == ProductID)
             {
-                product.SetClientID(ClientID);
+                if(product.GetClientID() == 0)
+                {
+                    product.SetClientID(ClientID);
+                    return 1;//"Product Successfully registered to client";
+                }
+                else
+                {
+                    return -1;//"Product is registered to another client";
+                }
             }
         }
+        return -2;//"Product not found";
     }
 
     public List<Product> GetClientProducts(int ClientID)
@@ -87,5 +111,51 @@ public class MOL {
             }
         }
         return ClientProducts;
+    }
+    public int ReturnProduct(int ProductID)
+    {
+        for(Product product : System.Products)
+        {
+            if(product.GetID() == ProductID)
+            {
+                if(product.GetClientID() == 0)
+                {
+                    return 0;//"Product is not registered to client";
+                }
+                else
+                {
+                    product.SetClientID(0);
+                    return 1;//"Product successfully returned";
+                }
+            }
+        }
+        return -1;//"Product not found";
+    }
+    public int DeleteProduct(int ProductID)
+    {
+        for(Product product : System.Products)
+        {
+            if(product.GetID() == ProductID)
+            {
+                System.Products.remove(product);
+                //Update in database
+                return 1;//"Product Successfully deleted";
+            }
+        }
+        return 0;//"Product not found";
+    }
+
+    public int DeleteClient(int ClientID)
+    {
+        for (Client client : System.Clients)
+        {
+            if(client.GetID() == ClientID)
+            {
+                System.Clients.remove(client);
+                //Update in database
+                return 1;//"Client successfully deleted";
+            }
+        }
+        return 0;//"Client not found";
     }
 }

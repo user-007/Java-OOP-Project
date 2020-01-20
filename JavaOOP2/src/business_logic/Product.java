@@ -15,7 +15,7 @@ public class Product {
     public Product()
     {}
 
-    public Product(int InitialID,String InitialNname, String InitialDescription,String InitialCode, Boolean InitialType, Date InitialExpiryDate, String InitialState)
+    public Product(int InitialID,String InitialNname, String InitialDescription,String InitialCode, Boolean InitialType, Date InitialExpiryDate, String InitialState,int initialClientID)
     {
         ID = InitialID;
         Name = InitialNname;
@@ -24,6 +24,7 @@ public class Product {
         Type = InitialType;
         ExpiryDate = InitialExpiryDate;
         State = InitialState;
+        ClientID = initialClientID;
     }
     public int GetID(){return this.ID;}
     public String GetName()
