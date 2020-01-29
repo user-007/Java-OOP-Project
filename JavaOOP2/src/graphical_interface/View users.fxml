@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="460.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="graphical_interface.VUsers">
+  <children>
+    <TableView layoutX="47.0" layoutY="50.0" prefHeight="325.0" prefWidth="492.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="ID" />
+        <TableColumn prefWidth="75.0" text="Name" fx:id="TVView" />
+        <TableColumn prefWidth="75.0" text="Username" />
+        <TableColumn prefWidth="75.0" text="PassWord" fx:id="TTView" />
+        <TableColumn prefWidth="75.0" text="Role" />
+        <TableColumn prefWidth="75.0" text="IsDeleted" fx:id="TView" />
+      </columns>
+    </TableView>
+    <Label layoutX="249.0" layoutY="15.0" text="View Users">
+      <font>
+        <Font size="18.0" />
+      </font>
+    </Label>
+    <Button fx:id="viewData" layoutX="14.0" layoutY="393.0" mnemonicParsing="false" onAction="#vData" prefHeight="45.0" prefWidth="180.0" text="View data" wrapText="false">
+      <font>
+        <Font size="15.0" />
+      </font>
+    </Button>
+  </children>
+</AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="197.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphical_interface.Controller">
+   <children>
+      <Label layoutX="120.0" layoutY="47.0" text="System for MOL Management and Administration">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="249.0" layoutY="84.0" text="Created by:l">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="161.0" layoutY="105.0" text="Nikolay Staikov &amp; Yoan Ivanov">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
